@@ -458,6 +458,8 @@ def timestamp_to_datetime(ts: Optional[int]) -> Optional[datetime]:
 
 
 def datetime_to_timestamp(dt: Optional[datetime]) -> Optional[int]:
+    if isinstance(dt, int):
+        return dt
     return int(dt.timestamp()) if dt else None
 
 
